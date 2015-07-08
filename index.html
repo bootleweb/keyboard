@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head lang="en">
+    <title>Privax Keyboard</title>
+    <link rel="stylesheet" href="css/keyboard.css">
+</head>
+
+<body ng-app="keyboardApp" ng-controller="KeyboardController as keyboard">
+    <div class="container">
+    </div>
+    <div class="keyboard-wrapper">
+        <div class="keyboard">
+            <div ng-repeat="key in keyboard.keys_row1" class="key {{key.width}}" ng-click="keyboard.keyPressed(key)">{{ key.norm_char}}</div>
+            <div ng-repeat="key in keyboard.keys_row2" class="key {{key.width}}" ng-click="keyboard.keyPressed(key)">{{ key.norm_char}}</div>
+            <div ng-repeat="key in keyboard.keys_row3" class="key {{key.width}}" ng-click="keyboard.keyPressed(key)">{{ key.norm_char}}</div>
+            <div ng-repeat="key in keyboard.keys_row4" class="key {{key.width}}" ng-click="keyboard.keyPressed(key)">{{ key.norm_char}}</div>
+            <div ng-repeat="key in keyboard.keys_row5" class="key {{key.width}}" ng-click="keyboard.keyPressed(key)">{{ key.norm_char}}</div>
+
+        </div>
+    </div>
+    <div class="input-group">
+    <label>typed:</label>
+        <textarea ng-model="keyboard.typed"></textarea>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/keyboardApp.js"></script>
+    <script src="js/controllers/keyboardCtrl.js"></script>
+</body>
+
+</html>
